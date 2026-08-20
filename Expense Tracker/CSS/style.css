@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*
+    without specifying border-box the default is content box - the content box alone takes all the width but with this content + padding + border is included in the width 
+    */
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f6f8;
+    color: #222;
+    min-height:100vh;/*vh(viewport height)-The viewport is basically the visible area of your browser window*/
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background: white;
+    border-bottom:1px solid #ddd;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+#theme-btn {
+    border:none;
+    background:none;
+    font-size:22px;
+    cursor:pointer;
+}
+
+main{
+    width: 84%;
+    max-width:1100px;
+    margin:30px auto;/*top/bottom  left/right*/
+}
+
+.summary {
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-bottom:30px;
+}
