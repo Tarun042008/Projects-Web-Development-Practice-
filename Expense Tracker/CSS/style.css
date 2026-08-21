@@ -46,3 +46,63 @@ main{
     gap:20px;
     margin-bottom:30px;
 }
+
+.summary-card {
+    background :white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);/*X Y Blur Shadow*/
+}
+
+.summary-card h3 {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.summary-card p {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* FORM */
+
+.expense-form-section {
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:30px;
+}
+
+.expense-form-section h2{
+    margin-bottom:20px;
+}
+
+#expense-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+#expense-form div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+select,
+button {
+    font: inherit;
+}
+
+input,
+select {
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+}
