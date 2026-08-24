@@ -106,3 +106,44 @@ select {
     border: 1px solid #ccc;
     border-radius: 7px;
 }
+
+#expense-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 7px;
+    background: #222;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* FILTERS */
+
+.filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.filters input {
+    flex: 1;
+}
+
+/* EXPENSE LIST */
+
+.expenses-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+
+.expenses-section h2 {
+    margin-bottom: 20px;
+}
+
+#expense-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
