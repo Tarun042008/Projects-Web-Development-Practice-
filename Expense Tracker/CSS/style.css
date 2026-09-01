@@ -152,9 +152,65 @@ select {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 15px;
-
     border: 1px solid #ddd;
     border-radius: 8px;
+}
+
+.expense-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.expense-description {
+    font-weight: bold;
+}
+
+
+.expense-meta {
+    color: #777;
+    font-size: 14px;
+}
+
+
+.expense-amount {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.delete-btn {
+    margin-left: 15px;
+    border: none;
+    background: #ff4d4d;
+    color: white;
+    padding: 7px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .summary {
+        grid-template-columns: 1fr;
+    }
+
+
+    #expense-form {
+        grid-template-columns: 1fr;
+    }
+
+
+    .filters {
+        flex-direction: column;
+    }
+
+
+    .expense-item {
+        align-items: flex-start;
+        gap: 10px;
+    }
 }
