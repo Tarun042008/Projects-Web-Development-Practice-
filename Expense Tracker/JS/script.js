@@ -67,3 +67,78 @@ expenseForm.addEventListener("submit", function (event) {
 });
 
 
+// ==========================================
+// 4. RENDER EXPENSES-()
+// ==========================================
+
+function renderExpenses() {
+
+    // Clear the existing list
+    expenseList.innerHTML = "";
+
+    // Get the expenses that should currently be displayed
+    let filteredExpenses = getFilteredExpenses();
+
+    // If there are no expenses
+    if (filteredExpenses.length === 0) {
+
+        expenseList.innerHTML = `
+            <p class="empty-message">
+                No expenses found.
+            </p>
+        `;
+
+        updateSummary();
+
+        return;
+    }
+
+    // Create HTML for every expense
+    filteredExpenses.forEach(function (expense, index) {
+
+        const expenseElement = document.createElement("div");
+
+        expenseElement.classList.add("expense-item");
+
+
+        expenseElement.innerHTML = `
+
+            <div class="expense-info">
+
+                <p class="expense-description">
+                    ${expense.description}
+                </p>
+
+                <p class="expense-meta">
+                    ${expense.category} • ${expense.date}
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <span class="expense-amount">
+                    ₹${expense.amount}
+                </span>
+
+                <button
+                    class="delete-btn"
+                    data-index="${index}"
+                >
+                    Delete
+                </button>
+
+            </div>
+        `;
+
+
+        // Add the expense to the page
+        expenseList.appendChild(expenseElement);
+
+    });
+
+
+    // Update summary information
+    updateSummary();
+}
