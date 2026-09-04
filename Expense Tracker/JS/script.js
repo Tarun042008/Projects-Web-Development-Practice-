@@ -142,3 +142,26 @@ function renderExpenses() {
     // Update summary information
     updateSummary();
 }
+
+// ==========================================
+// 5. DELETE EXPENSE
+// ==========================================
+
+expenseList.addEventListener("click", function (event) {
+
+    // Check if the clicked element is a delete button
+    if (event.target.classList.contains("delete-btn")) {
+
+        // Get the index stored inside data-index
+        const index = Number(event.target.dataset.index);
+
+
+        // Remove one expense from the array
+        expenses.splice(index, 1);
+
+
+        // Re-render the page
+        renderExpenses();
+    }
+
+});
