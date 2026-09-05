@@ -165,3 +165,176 @@ expenseList.addEventListener("click", function (event) {
     }
 
 });
+
+// ==========================================
+// 6. CALCULATE SUMMARY
+// ==========================================
+
+function updateSummary() {
+
+    // Calculate total spending
+    const total = expenses.reduce(function (sum, expense) {
+
+        return sum + expense.amount;
+
+    }, 0);
+
+
+    // Display total
+    totalSpending.textContent = `₹${total}`;
+
+
+    // Display number of expenses
+    expenseCount.textContent = expenses.length;
+
+                             
+    // Calculate current month's spending
+    const currentDate = new Date();
+
+    const currentMonth = currentDate.getMonth();
+
+    const currentYear = currentDate.getFullYear();
+
+
+    const monthlyTotal = expenses.reduce(function (sum, expense) {
+
+        const expenseDate = new Date(expense.date);
+
+        const expenseMonth = expenseDate.getMonth();
+
+        const expenseYear = expenseDate.getFullYear();
+
+
+        if (
+            expenseMonth === currentMonth &&
+            expenseYear === currentYear
+        ) {
+
+            return sum + expense.amount;
+        }
+
+
+        return sum;
+
+    }, 0);
+
+
+    monthlySpending.textContent = `₹${monthlyTotal}`;
+}
+
+// ==========================================
+// 7. FILTERING + SEARCH + SORTING
+// ==========================================
+
+function getFilteredExpenses() {
+
+    // Start with all expenses
+    let result = [...expenses];
+
+    // --------------------------------------
+    // SEARCH
+    // --------------------------------------
+    const searchText = searchInput.value.toLowerCase();
+
+    if (searchText !== "") {
+
+        result = result.filter(function (expense) {
+
+            return expense.description
+                .toLowerCase()
+                .includes(searchText);
+
+        });
+
+    }
+
+
+    // --------------------------------------
+    // CATEGORY FILTER
+    // --------------------------------------
+
+    const selectedCategory = categoryFilter.value;
+
+
+    if (selectedCategory !== "all") {
+
+        result = result.filter(function (expense) {
+
+            return expense.category === selectedCategory;
+
+        });
+
+    }
+
+
+    // --------------------------------------
+    // SORTING
+    // --------------------------------------
+
+    const sortValue = sortSelect.value;
+
+
+    if (sortValue === "newest") {
+
+        result.sort(function (a, b) {
+
+            return new Date(b.date) - new Date(a.date);
+
+        });
+
+    }
+    else if (sortValue === "oldest") {
+
+        result.sort(function (a, b) {
+
+            return new Date(a.date) - new Date(b.date);
+
+        });
+
+    }
+    else if (sortValue === "high") {
+        result.sort(function (a, b) {
+            return b.amount - a.amount;
+        });
+
+    }
+    else if (sortValue === "low") {
+        result.sort(function (a, b) {
+            return a.amount - b.amount;
+        });
+
+    }
+
+
+    return result;
+}
+
+// ==========================================
+// 8. FILTER EVENTS
+// ==========================================
+
+searchInput.addEventListener("input", function () {
+
+    renderExpenses();
+
+});
+
+categoryFilter.addEventListener("change", function () {
+
+    renderExpenses();
+
+});
+
+
+sortSelect.addEventListener("change", function () {
+
+    renderExpenses();
+
+});
+
+
+// ==========================================
+// 9. INITIAL RENDER
+// ==========================================
+
+renderExpenses();
