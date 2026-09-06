@@ -1,0 +1,6 @@
+****************Summary*************
+-Key Pointers About how ths website works and key featurs
+1-So we can keep adding amount and this amount gets reflected in the total summary report ont he top 
+2-Another important feature is our add expense function so what happens is we can keep adding our expenses or spendings and it gts reflected in the expenses list!!!
+3-We can delete certain expenses from the expense list too!!!
+4-Most important and exciting feature i like is the search expense option cause of its dynamic search functionality!!!
