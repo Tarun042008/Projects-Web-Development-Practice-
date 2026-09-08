@@ -4,8 +4,459 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Master</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+     <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <h1>Quiz Master</h1>
+
+        <button id="themeBtn" class="theme-btn">
+            🌙 Dark Mode
+        </button>
+
+    </header>
+    <!-- =========================
+         START SCREEN
+    ========================== -->
+
+    <main>
+
+        <section id="startScreen" class="screen">
+
+            <div class="card">
+
+                <h2>Test Your Knowledge</h2>
+
+                <p class="subtitle">
+                    Choose your category and difficulty.
+                </p>
+
+
+                <!-- Category -->
+
+                <div class="form-group">
+
+                    <label for="category">
+                        Category
+                    </label>
+
+                    <select id="category">
+
+                        <option value="0">
+                            Any Category
+                        </option>
+
+                        <option value="9">
+                            General Knowledge
+                        </option>
+
+                        <option value="10">
+                            Books
+                        </option>
+
+                        <option value="11">
+                            Film
+                        </option>
+
+                        <option value="12">
+                            Music
+                        </option>
+
+                        <option value="15">
+                            Video Games
+                        </option>
+
+                        <option value="17">
+                            Science & Nature
+                        </option>
+
+                        <option value="18">
+                            Computers
+                        </option>
+
+                        <option value="19">
+                            Mathematics
+                        </option>
+
+                        <option value="21">
+                            Sports
+                        </option>
+
+                        <option value="22">
+                            Geography
+                        </option>
+
+                        <option value="23">
+                            History
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Difficulty -->
+
+                <div class="form-group">
+
+                    <label for="difficulty">
+                        Difficulty
+                    </label>
+
+                    <select id="difficulty">
+
+                        <option value="any">
+                            Any Difficulty
+                        </option>
+
+                        <option value="easy">
+                            Easy
+                        </option>
+
+                        <option value="medium">
+                            Medium
+                        </option>
+
+                        <option value="hard">
+                            Hard
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Number of questions -->
+
+                <div class="form-group">
+
+                    <label for="questionCount">
+                        Number of Questions
+                    </label>
+
+                    <select id="questionCount">
+
+                        <option value="5">5</option>
+
+                        <option value="10" selected>
+                            10
+                        </option>
+
+                        <option value="15">15</option>
+
+                        <option value="20">20</option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    id="startBtn"
+                    class="primary-btn"
+                >
+                    Start Quiz
+                </button>
+
+            </div>
+
+
+            <!-- Leaderboard -->
+
+            <div class="card leaderboard-card">
+
+                <h2>🏆 High Scores</h2>
+
+                <div id="leaderboard">
+                    <!-- Generated using JavaScript -->
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             QUIZ SCREEN
+        ========================== -->
+
+        <section
+            id="quizScreen"
+            class="screen hidden"
+        >
+
+            <div class="quiz-container">
+
+
+                <!-- Top information -->
+
+                <div class="quiz-top">
+
+                    <span id="questionNumber">
+                        Question 1 / 10
+                    </span>
+
+                    <div class="timer">
+                        ⏱️
+                        <span id="timer">
+                            30
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <!-- Progress bar -->
+
+                <div class="progress-container">
+
+                    <div
+                        id="progressBar"
+                        class="progress-bar"
+                    ></div>
+
+                </div>
+
+
+                <!-- Question -->
+
+                <div class="question-card">
+
+                    <div class="question-header">
+
+                        <span
+                            id="difficultyBadge"
+                            class="difficulty-badge"
+                        >
+                            Easy
+                        </span>
+
+                        <button
+                            id="reviewBtn"
+                            class="review-btn"
+                        >
+                            ☆ Mark for Review
+                        </button>
+
+                    </div>
+
+
+                    <h2 id="question">
+                        Loading question...
+                    </h2>
+
+
+                    <!-- Options -->
+
+                    <div
+                        id="options"
+                        class="options"
+                    >
+                        <!-- Options generated by JS -->
+                    </div>
+
+                </div>
+
+
+                <!-- Navigation -->
+
+                <div class="navigation">
+
+                    <button
+                        id="previousBtn"
+                        class="secondary-btn"
+                    >
+                        ← Previous
+                    </button>
+
+                    <span id="reviewStatus">
+                        <!-- Review status -->
+                    </span>
+
+                    <button
+                        id="nextBtn"
+                        class="primary-btn"
+                    >
+                        Next →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             RESULT SCREEN
+        ========================== -->
+
+        <section
+            id="resultScreen"
+            class="screen hidden"
+        >
+
+            <div class="card result-card">
+
+                <div class="result-icon">
+                    🏆
+                </div>
+
+                <h2>Quiz Completed!</h2>
+
+                <p class="score-label">
+                    Your Score
+                </p>
+
+                <div
+                    id="finalScore"
+                    class="final-score"
+                >
+                    0 / 10
+                </div>
+
+                <p id="resultMessage">
+                    Great job!
+                </p>
+
+
+                <!-- Statistics -->
+
+                <div class="statistics">
+
+                    <div class="stat">
+
+                        <span
+                            id="correctCount"
+                            class="stat-number"
+                        >
+                            0
+                        </span>
+
+                        <span>
+                            Correct
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <span
+                            id="wrongCount"
+                            class="stat-number"
+                        >
+                            0
+                        </span>
+
+                        <span>
+                            Wrong
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <span
+                            id="percentage"
+                            class="stat-number"
+                        >
+                            0%
+                        </span>
+
+                        <span>
+                            Percentage
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="result-buttons">
+
+                    <button
+                        id="restartBtn"
+                        class="primary-btn"
+                    >
+                        🔄 Restart Quiz
+                    </button>
+
+                    <button
+                        id="homeBtn"
+                        class="secondary-btn"
+                    >
+                        🏠 Home
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Result leaderboard -->
+
+            <div class="card leaderboard-card">
+
+                <h2>🏆 Leaderboard</h2>
+
+                <div id="resultLeaderboard">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LOADING
+        ========================== -->
+
+        <div
+            id="loading"
+            class="loading hidden"
+        >
+
+            <div class="spinner"></div>
+
+            <p>
+                Fetching questions...
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             ERROR MESSAGE
+        ========================== -->
+
+        <div
+            id="errorMessage"
+            class="error-message hidden"
+        >
+            <p id="errorText">
+                Something went wrong.
+            </p>
+
+            <button
+                id="errorHomeBtn"
+                class="secondary-btn"
+            >
+                Go Home
+            </button>
+
+        </div>
+
+    </main>
     
+    <script src="script.js"></script>
 </body>
 </html>
