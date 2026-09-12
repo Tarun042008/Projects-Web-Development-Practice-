@@ -1,0 +1,861 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --bg-color: #f4f7fb;
+
+    --card-color: #ffffff;
+
+    --text-color: #1f2937;
+
+    --secondary-text: #6b7280;
+
+    --primary-color: #4f46e5;
+
+    --primary-hover: #4338ca;
+
+    --border-color: #e5e7eb;
+
+    --correct-color: #16a34a;
+
+    --wrong-color: #dc2626;
+
+    --review-color: #f59e0b;
+
+    --shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+body.dark {
+
+    --bg-color: #111827;
+
+    --card-color: #1f2937;
+
+    --text-color: #f9fafb;
+
+    --secondary-text: #9ca3af;
+
+    --border-color: #374151;
+
+    --shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background-color: var(--bg-color);
+
+    color: var(--text-color);
+
+    min-height: 100vh;
+
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+
+    width: 100%;
+
+    padding: 20px 8%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid var(--border-color);
+
+    background-color: var(--card-color);
+}
+
+
+.header h1 {
+
+    font-size: 28px;
+
+    color: var(--primary-color);
+}
+
+
+.theme-btn {
+
+    padding: 10px 15px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 8px;
+
+    background: var(--card-color);
+
+    color: var(--text-color);
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+.theme-btn:hover {
+
+    background: var(--bg-color);
+}
+
+
+/* =========================
+   SCREEN
+========================= */
+
+.screen {
+
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: 40px auto;
+
+}
+
+
+.hidden {
+
+    display: none !important;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+
+    background-color: var(--card-color);
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 25px;
+}
+
+
+.card h2 {
+
+    margin-bottom: 10px;
+
+    text-align: center;
+}
+
+
+.subtitle {
+
+    text-align: center;
+
+    color: var(--secondary-text);
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+}
+
+
+.form-group select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    border:
+        1px solid var(--border-color);
+
+    background-color: var(--card-color);
+
+    color: var(--text-color);
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+.form-group select:focus {
+
+    border-color: var(--primary-color);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-btn,
+.secondary-btn {
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 12px 20px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+
+.primary-btn {
+
+    background-color: var(--primary-color);
+
+    color: white;
+}
+
+
+.primary-btn:hover {
+
+    background-color: var(--primary-hover);
+}
+
+
+.secondary-btn {
+
+    background-color: var(--bg-color);
+
+    color: var(--text-color);
+
+    border:
+        1px solid var(--border-color);
+}
+
+
+.secondary-btn:hover {
+
+    opacity: 0.8;
+}
+
+
+#startBtn {
+
+    width: 100%;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   LEADERBOARD
+========================= */
+
+.leaderboard-card {
+
+    margin-top: 25px;
+}
+
+
+.leaderboard-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 12px;
+
+    border-bottom:
+        1px solid var(--border-color);
+}
+
+
+.leaderboard-item:last-child {
+
+    border-bottom: none;
+}
+
+
+.rank {
+
+    font-weight: bold;
+
+    width: 40px;
+}
+
+
+.score {
+
+    font-weight: bold;
+
+    color: var(--primary-color);
+}
+
+
+.no-score {
+
+    text-align: center;
+
+    color: var(--secondary-text);
+
+    padding: 15px;
+}
+
+
+/* =========================
+   QUIZ CONTAINER
+========================= */
+
+.quiz-container {
+
+    width: 100%;
+}
+
+
+.quiz-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+
+    font-weight: bold;
+}
+
+
+.timer {
+
+    padding: 8px 14px;
+
+    border-radius: 8px;
+
+    background-color: var(--card-color);
+
+    border:
+        1px solid var(--border-color);
+}
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress-container {
+
+    width: 100%;
+
+    height: 8px;
+
+    background-color:
+        var(--border-color);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+}
+
+
+.progress-bar {
+
+    height: 100%;
+
+    width: 0%;
+
+    background-color: var(--primary-color);
+
+    transition: width 0.3s;
+}
+
+
+/* =========================
+   QUESTION CARD
+========================= */
+
+.question-card {
+
+    background-color: var(--card-color);
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.question-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+
+.difficulty-badge {
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background-color: var(--primary-color);
+
+    color: white;
+
+    font-size: 13px;
+
+    text-transform: capitalize;
+}
+
+
+.review-btn {
+
+    border: none;
+
+    background: none;
+
+    color: var(--secondary-text);
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+.review-btn.marked {
+
+    color: var(--review-color);
+
+    font-weight: bold;
+}
+
+
+#question {
+
+    font-size: 23px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   OPTIONS
+========================= */
+
+.options {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.option {
+
+    padding: 15px;
+
+    border:
+        2px solid var(--border-color);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    background-color: var(--card-color);
+
+    color: var(--text-color);
+
+    transition: 0.2s;
+}
+
+
+.option:hover {
+
+    border-color:
+        var(--primary-color);
+}
+
+
+.option.selected {
+
+    border-color:
+        var(--primary-color);
+
+    background-color:
+        rgba(79, 70, 229, 0.1);
+}
+
+
+.option.correct {
+
+    border-color:
+        var(--correct-color);
+
+    background-color:
+        rgba(22, 163, 74, 0.12);
+}
+
+
+.option.wrong {
+
+    border-color:
+        var(--wrong-color);
+
+    background-color:
+        rgba(220, 38, 38, 0.12);
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navigation {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+
+#reviewStatus {
+
+    color: var(--review-color);
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+.result-card {
+
+    text-align: center;
+}
+
+
+.result-icon {
+
+    font-size: 60px;
+
+    margin-bottom: 10px;
+}
+
+
+.score-label {
+
+    color: var(--secondary-text);
+
+    margin-top: 20px;
+}
+
+
+.final-score {
+
+    font-size: 50px;
+
+    font-weight: bold;
+
+    color: var(--primary-color);
+
+    margin: 10px 0;
+}
+
+
+#resultMessage {
+
+    color: var(--secondary-text);
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.statistics {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin: 25px 0;
+}
+
+
+.stat {
+
+    padding: 20px;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.stat-number {
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: var(--primary-color);
+}
+
+
+/* =========================
+   RESULT BUTTONS
+========================= */
+
+.result-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.5);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: white;
+
+    z-index: 100;
+}
+
+
+.spinner {
+
+    width: 50px;
+
+    height: 50px;
+
+    border:
+        5px solid #ffffff;
+
+    border-top:
+        5px solid var(--primary-color);
+
+    border-radius: 50%;
+
+    animation:
+        spin 1s linear infinite;
+
+    margin-bottom: 15px;
+}
+
+
+@keyframes spin {
+
+    to {
+
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error-message {
+
+    position: fixed;
+
+    inset: 0;
+
+    background-color:
+        var(--bg-color);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    z-index: 200;
+}
+
+
+#errorText {
+
+    color: var(--wrong-color);
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .header {
+
+        padding: 15px 5%;
+    }
+
+
+    .header h1 {
+
+        font-size: 22px;
+    }
+
+
+    .screen {
+
+        width: 94%;
+
+        margin: 25px auto;
+    }
+
+
+    .card {
+
+        padding: 20px;
+    }
+
+
+    #question {
+
+        font-size: 19px;
+    }
+
+
+    .question-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    .navigation {
+
+        gap: 10px;
+    }
+
+
+    .navigation button {
+
+        padding: 10px 12px;
+    }
+
+
+    .statistics {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .result-buttons {
+
+        flex-direction: column;
+    }
+
+}
