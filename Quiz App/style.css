@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /*Whenever I give an element a width, keep the entire element within that width, including its padding and border."*/
 }
 
 :root {
