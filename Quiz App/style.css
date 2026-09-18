@@ -9,9 +9,9 @@
     /*Whenever I give an element a width, keep the entire element within that width, including its padding and border."*/
 }
 
-:root {
+:root {/* refers the top level element*/
 
-    --bg-color: #f4f7fb;
+    --bg-color: #f4f7fb;/* this is how u declare variables so when u have to set backgorund color to smtg then u have to just chang ehere and it will change in all other places u dont have to change it everywhere*/
 
     --card-color: #ffffff;
 
@@ -36,7 +36,7 @@
 }
 
 
-body.dark {
+body.dark {/*this how we add the ddark mode feature in website!!*/
 
     --bg-color: #111827;
 
