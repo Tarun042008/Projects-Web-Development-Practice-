@@ -77,20 +77,13 @@ body {
 ========================= */
 
 .header {
-
     width: 100%;
-
     padding: 20px 8%;
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     border-bottom:
         1px solid var(--border-color);
-
     background-color: var(--card-color);
 }
 
@@ -124,6 +117,9 @@ body {
 .theme-btn:hover {
 
     background: var(--bg-color);
+    /*
+    :hover is a CSS pseudo-class. It applies styles when the user moves their mouse over the element.
+    */
 }
 
 
