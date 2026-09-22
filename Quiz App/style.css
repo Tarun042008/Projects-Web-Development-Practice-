@@ -133,7 +133,7 @@ body {
 
     max-width: 900px;
 
-    margin: 40px auto;
+    margin: 40px auto;/*top and left 40pc and left and rght automatic*/
 
 }
 
@@ -141,6 +141,8 @@ body {
 .hidden {
 
     display: none !important;
+    /* display: none; — Removes the element from the page's layout. It won't be visible, and it won't occupy any space.
+    !important — Gives this CSS declaration priority over normal CSS declarations that might otherwise override it.*/
 }
 
 
