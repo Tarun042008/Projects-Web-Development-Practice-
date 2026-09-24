@@ -248,7 +248,8 @@ body {
 
     font-weight: bold;
 
-    transition: 0.2s;
+    transition: 0.2s;/*We have primary button hover right below so when we hover the transtion property makes the transition feel smooth
+*/
 }
 
 
@@ -400,7 +401,7 @@ body {
 
     border-radius: 10px;
 
-    overflow: hidden;
+    overflow: hidden;/*The overflow: hidden; property hides any content that extends outside the boundaries of an element.*/
 
     margin-bottom: 20px;
 }
@@ -458,7 +459,7 @@ body {
 
     font-size: 13px;
 
-    text-transform: capitalize;
+    text-transform: capitalize;/*It makes the first letter of each word uppercase.*/
 }
 
 
