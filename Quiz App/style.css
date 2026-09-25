@@ -718,7 +718,7 @@ body {
 
     color: white;
 
-    z-index: 100;
+    z-index: 100;/*This is usd to decide which element appears in front of which element and the higher the z index iot will be more in front of the others*/
 }
 
 
