@@ -747,7 +747,7 @@ body {
 
     to {
 
-        transform: rotate(360deg);
+        transform: rotate(360deg);/*this defines the final state of animation*/
     }
 }
 
