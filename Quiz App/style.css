@@ -758,9 +758,9 @@ body {
 
 .error-message {
 
-    position: fixed;
+    position: fixed;/*this means that the element will stay fixed even when u scroll*/
 
-    inset: 0;
+    inset: 0;/*mean top=0 righ=0 ;left=0 bottom=0*/
 
     background-color:
         var(--bg-color);
