@@ -790,6 +790,10 @@ body {
 /* =========================
    RESPONSIVE
 ========================= */
+/*
+This is a media query. Its purpose is to make your website look better on small screens such as phones.
+Apply all the CSS inside this block only when the screen width is 600px or less
+*/
 
 @media (max-width: 600px) {
 
@@ -849,7 +853,7 @@ body {
 
     .statistics {
 
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /*before we had 3 columns wit 31fr each now only 1 column*/
     }
 
 
