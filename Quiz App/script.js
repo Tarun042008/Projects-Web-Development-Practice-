@@ -194,7 +194,18 @@ themeBtn.addEventListener(
 ===================================================== */
 
 async function startQuiz() {
+    /* 
+    fetch() takes some time because JavaScript has to:
 
+    Send a request to the internet
+    Wait for the server
+    Receive the response
+
+    async allows us to use await inside the function.
+    basically means:
+
+        "This function may have to wait for some asynchronous operations."
+    */
     /*
         Reset old quiz data
     */
