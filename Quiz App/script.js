@@ -238,7 +238,7 @@ async function startQuiz() {
     /*
         Build API URL
     */
-
+   /*First time using api  */
     let apiURL =
         `https://opentdb.com/api.php?amount=${amount}&type=multiple`;
 
