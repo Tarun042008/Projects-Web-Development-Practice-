@@ -4,3 +4,4 @@ So this is somethig i always thought of making for the juniors and even for my f
 --I should learn and apply the autosync ption like TLE so that i can load their steak and other details directly
 --Also include highest increase/improvement in the last 1 month last 6monhs and last 1 year try figuring outa formula for this!!
 --includ a sepret clicable button for each user where it shows in detail stats about him in a pop up screen
+--learn how to accomodate large number of users in the website !!!
