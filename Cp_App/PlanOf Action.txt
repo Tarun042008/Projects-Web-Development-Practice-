@@ -5,3 +5,4 @@ So this is somethig i always thought of making for the juniors and even for my f
 --Also include highest increase/improvement in the last 1 month last 6monhs and last 1 year try figuring outa formula for this!!
 --includ a sepret clicable button for each user where it shows in detail stats about him in a pop up screen
 --learn how to accomodate large number of users in the website !!!
+--include a list of topics nd the order they shold go through an also enable blog pulishing and also the riteria for blog publishing should be realted to either their rating or nuber of problems solved so that the ca suggest ti and help others only if they r qualified or u can say experienced to do so.
